@@ -74,9 +74,9 @@ def buy_token(token_symbol):
             print(f"{symbol} 不在 Gate.io 交易所上市")
             return
 
-        # 直接按花费50 USDT进行市价买单
-        order = gate.create_order(symbol, 'market', 'buy', amount=10)
-        print(f"成功购买 {symbol}，总花费: 50 USDT")
+        # 直接按花费500 USDT进行市价买单
+        order = gate.create_order(symbol, 'market', 'buy', amount=500)
+        print(f"成功购买 {symbol}，总花费: 500 USDT")
         print("订单详情:", order)
     except Exception as e:
         print(f"购买 {symbol} 失败: {e}")
@@ -130,5 +130,5 @@ while True:
 
     # 计算剩余的时间
     elapsed_time = time.time() - start_time
-    sleep_time = max(0, 1 - elapsed_time)  # 保证 sleep_time 至少为0
+    sleep_time = max(0, 1 - elapsed_time) 
     time.sleep(sleep_time)
